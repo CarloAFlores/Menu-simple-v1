@@ -1,0 +1,274 @@
+/* Definimos las Custom properties */
+:root{
+    /* Colores */
+    --negro         : #393939;
+    --blanco        : #ececec;
+    
+    /* Tipografía */
+    --tipo-principal   : Helvetica, Arial, sans-serif;
+    --tipo-secundaria  : Verdana;
+  }
+    
+  /* (Opcional) Las adaptamos al modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root{
+        --negro         : #ececec;
+    }
+  }
+  
+  /* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* Reseteamos los margin y paddings de todas las etiquetas */
+  * , *::before , *::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+  *::before , *::after{
+    display: block;
+  }
+  
+  /* Evitamos problemas con las imagenes */
+  img , picture , video , iframe , figure{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* (Opcional) */ object-fit: cover;        
+    /* (Opcional) */ object-position: center center;
+  }
+  
+  /* Reseteamos los enlaces para funcionar como cajas... */
+  a {
+    display: block;
+    text-decoration: none;
+    color:inherit;
+    font-size:inherit;
+  }
+  /* ... excepto los que se encuentran en párrafos */
+  p a {
+    display: inline;
+  }
+  
+  /* Quitamos los puntos de los <li> */
+  li {
+    list-style-type: none;
+  }
+  
+  /* (Opcional) Configuramos anclas suaves */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Desactivamos estilos por defecto de las principales etiquetas de texto */
+  h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color:inherit;
+  }
+  /* Evitamos problemas con los pseudoelementos de quotes */
+  blockquote:before, blockquote:after, q:before, q:after {
+      content: '';
+      content: none;
+  }
+  
+  /* (Opcional) Configuramos el texto que seleccionamos */
+  ::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
+  /* Nivelamos problemas de tipografías y colocación de formularios */
+  form , input, textarea, select , button , label{
+      font-family: inherit;
+      font-size: inherit;
+      hyphens: auto;
+      background-color: transparent;
+      color:inherit;
+      display: block;
+      /* (Opcional) */ appearance: none;
+  }
+  
+  /* Reseteamos las tablas */
+  table , tr , td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Evitamos problemas con los SVG */
+  svg{
+      width: 100%;
+      display: block;
+      fill: currentColor;
+  }
+  
+  /* Configuramos la tipografía para toda la web */
+  body {
+    min-height  : 100vh;
+    font-size   : 100%;
+    font-family : var(--tipo-principal);
+    color       : var(--negro);
+    /* (Opcional) */ hyphens: auto;
+    /* (Opcional) */ font-smooth: always;
+    /* (Opcional) */ -webkit-font-smoothing: antialiased;
+    /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
+  }
+  /*############################################################################################################### */
+  .Saludo{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("/assets/fondo-1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__nombre{
+      color: white;
+      position: relative;
+      animation: 2s fadeIn;
+      animation-fill-mode: forwards;
+      font-family: "Lilita One", sans-serif;
+      font-style: normal;
+      text-align: center;
+      font-size: 2rem;
+    }
+    &__ancla{
+      background: var(--negro);
+      color: var(--blanco);
+      margin-top: 2rem;
+
+      width: 8rem;
+      height: 2rem;
+
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+
+      font-family: "Open Sans", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+
+      animation: 2s fadeIn;
+      animation-fill-mode: forwards;
+      
+      opacity: 0;
+    }
+  }
+  /* ############################################################################################################### */
+
+  .cabecera{
+    background: red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    &__logo{
+      width: 6rem;
+    }
+    &__nombre{
+      color: white;
+      font-family: "Lilita One", sans-serif;
+      font-style: normal;
+      text-align: center;
+      font-size: 1rem;
+
+    }
+  }
+  .extra{
+    text-align: center;
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
+    font-size: 2.5rem;
+  }
+  .Menu{
+    display: grid;
+    background: blue;
+    column-gap: 10px;
+    row-gap: 5px;
+    grid-template-columns: auto auto;
+    &__opcion{
+      margin-top: 1rem;
+      background: rebeccapurple;
+      text-align: center;
+      width: 100%;
+      height: 5rem;
+      border-radius: 1rem;
+      font-family: "Lilita One", sans-serif;
+      font-style: normal;
+      font-size: 1.5rem;
+    }
+  }
+
+  .modal{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+
+    display: grid;
+    place-items: center;
+    &__info{
+      background: greenyellow;
+      width: 95%;
+      height: 80%;
+
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+      border-radius: 15px;
+      overflow-y: scroll;
+    }
+    .card{
+      border: 1px solid black;
+      border-radius: 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 15rem;
+      gap: 10px;
+
+      overflow-y: scroll;
+      &__img{
+        width: 50%;
+      }
+      &__compra{
+        background: blue;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeOff {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
