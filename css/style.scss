@@ -251,6 +251,17 @@
         border-radius: 5px;
         margin-bottom: 10px;
       }
+
+      &__nombre{
+        font-family: "Lilita One", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+      }
+      &__precio{
+        font-family: "Lilita One", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+      }
     }
   }
 

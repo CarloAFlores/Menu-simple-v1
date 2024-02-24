@@ -264,6 +264,16 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+.modal .card__nombre {
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.modal .card__precio {
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
 
 @keyframes fadeIn {
   0% {
