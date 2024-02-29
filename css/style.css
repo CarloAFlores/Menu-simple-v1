@@ -181,7 +181,7 @@ body {
 
 /* ############################################################################################################### */
 .cabecera {
-  background: red;
+  background: #D1317E;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -207,7 +207,7 @@ body {
 
 .Menu {
   display: grid;
-  background: blue;
+  background: #EE3990;
   -moz-column-gap: 10px;
        column-gap: 10px;
   row-gap: 5px;
@@ -249,6 +249,7 @@ body {
 .modal .card {
   border: 1px solid black;
   border-radius: 15px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,6 +259,7 @@ body {
 }
 .modal .card__img {
   width: 50%;
+  margin-top: 10px;
 }
 .modal .card__compra {
   background: blue;
@@ -273,6 +275,11 @@ body {
   font-family: "Lilita One", sans-serif;
   font-style: normal;
   font-weight: bold;
+}
+.modal__compra {
+  background: blue;
+  width: 90%;
+  height: 80vh;
 }
 
 @keyframes fadeIn {

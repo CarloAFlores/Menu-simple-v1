@@ -167,7 +167,7 @@
   /* ############################################################################################################### */
 
   .cabecera{
-    background: red;
+    background: #D1317E;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -192,7 +192,7 @@
   }
   .Menu{
     display: grid;
-    background: blue;
+    background: #EE3990;
     column-gap: 10px;
     row-gap: 5px;
     grid-template-columns: auto auto;
@@ -235,6 +235,7 @@
     .card{
       border: 1px solid black;
       border-radius: 15px;
+      box-sizing: border-box;
 
       display: flex;
       flex-direction: column;
@@ -245,6 +246,7 @@
       overflow-y: scroll;
       &__img{
         width: 50%;
+        margin-top: 10px;
       }
       &__compra{
         background: blue;
@@ -262,6 +264,12 @@
         font-style: normal;
         font-weight: bold;
       }
+    }
+
+    &__compra{
+      background: blue;
+      width: 90%;
+      height: 80vh;
     }
   }
 

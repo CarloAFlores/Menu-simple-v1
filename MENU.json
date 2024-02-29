@@ -27,21 +27,21 @@
                 "description": "Ales Prairie Noir Whiskey Barrel Aged Imperial Stout 12oz.",
                 "price": 60,
                 "img": "prairie-artisian.png",
-                "filterId": 1
+                "filterId": 4
             },
             {
                 "name": "Cemita de pollo",
                 "description": "The Lost Abbey Citrus Sin American Wild Ale 750ml.",
                 "price": 70,
                 "img": "lost-abbey.png",
-                "filterId": 2
+                "filterId": 5
             },
             {
                 "name": "Cemita de carne enchilada",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 70,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 6
             }
         ],
         "Caldos":[ 
@@ -50,35 +50,35 @@
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 90,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 7
             },
                      {
                 "name": "Mole de zancarron",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 130,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 8
             },
             {
                 "name": "Molde de panza",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 80,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 9
             },
             {
                 "name": "Caldo de pollo",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 60,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 10
             },
             {
                 "name": "Pozole(Maciza,Cabeza o Pollo)",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 60,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 11
             }
         ],
         "Antojitos":[
@@ -87,85 +87,85 @@
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 90,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 12
             },               {
                 "name": "Envueltos de mole",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 90,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 13
             },               {
                 "name": "Mixiote",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 90,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 14
             },               {
                 "name": "Huevos al gusto",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 60,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 15
             },               {
                 "name": "Milanesa con quesillo",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 85,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 16
             },               {
                 "name": "Papas fritas",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 35,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 17
             },               {
                 "name": "Arroz",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 30,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 18
             },               {
                 "name": "Tostada(pieza)",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 40,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 19
             },               {
                 "name": "Tacos dorados",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 70,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 20
             },               {
                 "name": "Tampiquena",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 120,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 21
             },               {
                 "name": "Chalupas(6 pzas)",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 35,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 22
             },               {
                 "name": "Carne asada",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 100,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 23
             },               {
                 "name": "Chilaquiles verdes o rojos",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 85,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 24
             },               {
                 "name": "Enchiladas verdes o rojas",
                 "description": "Prairie Artisa Ales Paradise Imperial Stout 12oz.",
                 "price": 85,
                 "img": "prairie.png",
-                "filterId": 3
+                "filterId": 24
             }
         ]
     }

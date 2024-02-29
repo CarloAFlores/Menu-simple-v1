@@ -11,9 +11,9 @@ const apiMenu = async(idBoton)=>{
 document.addEventListener('DOMContentLoaded',()=>{
     
     let botones = document.querySelectorAll('.Menu__opcion');
+    let Btn_Compra = document.getElementById('Compra');
     
     botones.forEach(boton => {
-        let modal = document.getElementById('modal');
         boton.addEventListener('click', () => {
             let Id = boton.id
             BuscadorAPI(Id);
@@ -29,6 +29,24 @@ document.addEventListener('DOMContentLoaded',()=>{
             cerrarModal(modal);
         }
     });
+
+    Btn_Compra.addEventListener('click',()=>{
+        let modal_compra = document.getElementById('modal-compra');
+        abrirModal(modal_compra);
+
+        let finProductos = FiltroSearch(arrayCompra);
+        finProductos;
+        MaquetarCompra();
+
+        document.addEventListener('click', function(event) {
+            if (event.target === modal_compra) {
+                cerrarModal(modal_compra);
+            }
+        });
+
+
+
+    })
 
 })
 
@@ -52,13 +70,13 @@ function MaquetarCuerpo(SubMenu) {
     let maqueta = '';
 
     SubMenu.forEach(element => {
-        const {name, description, price} = element;
+        const {name, description, price,filterId} = element;
         maqueta += `<div class="card">
             <img src="https://via.placeholder.com/600/92c952" alt="" class="card__img">
             <span class="card__nombre">${name}</span>
             <p class="card__descripcion">${description}</p>
             <span class="card__precio precio">$${price}</span>
-            <button class="card__compra btn" data-price=${price}>AGREGAR</button>
+            <button class="card__compra btn" data-price=${price} data-nombre="${name}" data-id=${filterId}>AGREGAR</button>
         </div>`;
     });
 
@@ -68,18 +86,41 @@ function MaquetarCuerpo(SubMenu) {
 
     botonesAgregarCarro.forEach(boton => {
         boton.addEventListener('click', () => {
-            const price = boton.getAttribute('data-price');
-            arrayCompra.push(price)
-            console.log(price);
+            const price = parseFloat(boton.getAttribute('data-price'));
+            const name = boton.getAttribute('data-nombre');
+            const id = boton.getAttribute('data-id');
+            arrayCompra.push({name, price,id}); // Almacena un objeto con el nombre y el precio
+            console.log(arrayCompra);
             Suma(arrayCompra);
         });
     });
 }
 
 function Suma(arrayCompra) {
-    console.log(arrayCompra);
-    // Convertir cada elemento del array a número usando parseFloat
-    let total = arrayCompra.reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
-    console.log(total);
-    localStorage.setItem("titulo",total);
+    let total = arrayCompra.reduce((acc, item) => acc + item.price, 0);
+    console.log("Total:", total);
+    MostrarDetallesVenta(arrayCompra, total);
+}
+
+function MostrarDetallesVenta(arrayCompra, total) {
+    console.log("Detalles de la venta:");
+    arrayCompra.forEach(item => {
+        console.log("Producto:", item.name, "- Precio:", item.price);
+    });
+    console.log("Total de la venta:", total);
+}
+
+const FiltroSearch = async(arrayCompra)=> {
+    const resp =await fetch("MENU.json");
+    const {Menu} = await resp.json();
+    console.log(Menu);
+    arrayCompra.forEach(element => {
+        console.log(element.id)
+    });
+}
+
+function MaquetarCompra() {
+    let maquetaCompra = '';
+    maquetaCompra += `<div>Hola mundo<div>`;
+    document.getElementById('modal__compra').innerHTML = maquetaCompra;
 }
