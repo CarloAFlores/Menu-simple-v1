@@ -110,13 +110,30 @@ function MostrarDetallesVenta(arrayCompra, total) {
     console.log("Total de la venta:", total);
 }
 
-const FiltroSearch = async(arrayCompra)=> {
-    const resp =await fetch("MENU.json");
-    const {Menu} = await resp.json();
-    console.log(Menu);
+const FiltroSearch = async (arrayCompra) => {
+    console.log(arrayCompra);
+    let arrayComida = [];
     arrayCompra.forEach(element => {
-        console.log(element.id)
+        arrayComida.push(element.id);
     });
+    const resp = await fetch("MENU.json");
+    const { Menu } = await resp.json();
+    console.log(Menu);
+    const cemitas = Menu.Cemitas;
+    const caldos = Menu.Caldos;
+    const antojitos = Menu.Antojitos;
+    let FinCompra = [];
+    arrayComida.forEach(element2 => {
+        console.log(element2);
+        const FiltroCemita = cemitas.filter((element) => element.filterId == element2); // Ejemplo de filtrado por nombre
+        const FiltroCaldo = caldos.filter((element) => element.filterId == element2); // Ejemplo de filtrado por nombre
+        const FiltroAntojitos = antojitos.filter((element) => element.filterId == element2); // Ejemplo de filtrado por nombre
+        
+        // Agregar elementos filtrados al array FinCompra
+        FinCompra = FinCompra.concat(FiltroCemita, FiltroCaldo, FiltroAntojitos);
+    });
+
+    console.log(FinCompra);
 }
 
 function MaquetarCompra() {
