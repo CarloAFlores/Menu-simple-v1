@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
         let finProductos = FiltroSearch(arrayCompra);
         finProductos;
-        MaquetarCompra();
+        MaquetarCompra(finProductos);
 
         document.addEventListener('click', function(event) {
             if (event.target === modal_compra) {
@@ -133,11 +133,29 @@ const FiltroSearch = async (arrayCompra) => {
         FinCompra = FinCompra.concat(FiltroCemita, FiltroCaldo, FiltroAntojitos);
     });
 
-    console.log(FinCompra);
+    return FinCompra;
 }
 
-function MaquetarCompra() {
+const MaquetarCompra = async(finProductos) => {
+
+    const FinalProductos = await finProductos;
+
+    //if (FinalProductos.length == 0) {
+    //    console.log("Ta vacio mano");
+    //}else{
+    //   console.log("Ta lleno Mano");
+    //}
     let maquetaCompra = '';
-    maquetaCompra += `<div>Hola mundo<div>`;
+    FinalProductos.forEach(element => {
+        const {name, description, price,filterId} = element;
+        maquetaCompra += `<div class="card">
+            <img src="https://via.placeholder.com/600/92c952" alt="" class="card__img">
+            <span class="card__nombre">${name}</span>
+            <p class="card__descripcion">${description}</p>
+            <span class="card__precio precio">$${price}</span>
+            <button class="card__compra btn" data-price=${price} data-nombre="${name}" data-id=${filterId}>AGREGAR</button>
+        </div>`;
+    });
+
     document.getElementById('modal__compra').innerHTML = maquetaCompra;
 }
