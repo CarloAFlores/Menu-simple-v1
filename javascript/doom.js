@@ -92,6 +92,7 @@ function MaquetarCuerpo(SubMenu) {
             arrayCompra.push({name, price,id}); // Almacena un objeto con el nombre y el precio
             console.log(arrayCompra);
             Suma(arrayCompra);
+            alert("Se agrego exiotosamente");
         });
     });
 }
@@ -99,6 +100,8 @@ function MaquetarCuerpo(SubMenu) {
 function Suma(arrayCompra) {
     let total = arrayCompra.reduce((acc, item) => acc + item.price, 0);
     console.log("Total:", total);
+    let FinTotal =localStorage.setItem('test', total);
+    document.getElementById('Total__Final').innerHTML = 'Total es : '+localStorage.getItem('test');
     MostrarDetallesVenta(arrayCompra, total);
 }
 
@@ -148,12 +151,15 @@ const MaquetarCompra = async(finProductos) => {
     let maquetaCompra = '';
     FinalProductos.forEach(element => {
         const {name, description, price,filterId} = element;
-        maquetaCompra += `<div class="card">
-            <img src="https://via.placeholder.com/600/92c952" alt="" class="card__img">
-            <span class="card__nombre">${name}</span>
-            <p class="card__descripcion">${description}</p>
-            <span class="card__precio precio">$${price}</span>
-            <button class="card__compra btn" data-price=${price} data-nombre="${name}" data-id=${filterId}>AGREGAR</button>
+        maquetaCompra += `<div class="cardCompra">
+            <div class="cardCompra__general">
+                <img src="https://via.placeholder.com/600/92c952" alt="" class="card__img">
+                <span class="card__nombre">${name}</span>
+                <span class="card__precio precio">$${price}</span>
+            </div>
+            <div class="cardCompra__info">
+                <p>${description}</p>
+            </div>
         </div>`;
     });
 

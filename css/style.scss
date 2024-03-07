@@ -271,7 +271,33 @@
       width: 90%;
       height: 80vh;
       overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+    &__compra__total{
+      background: yellow;
+      position: fixed;
+      top: 90%;
+    }
+
+    .cardCompra{
+      background: red;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      width: 95%;
+      &__general{
+        background: purple;
+        width: 55%;
+      }
+      &__info{
+        background: peru;
+        width: 35%;
+      }
+    }
+
+
   }
 
   @keyframes fadeIn {

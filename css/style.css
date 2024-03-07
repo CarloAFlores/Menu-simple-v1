@@ -281,6 +281,29 @@ body {
   width: 90%;
   height: 80vh;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__compra__total {
+  background: yellow;
+  position: fixed;
+  top: 90%;
+}
+.modal .cardCompra {
+  background: red;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 95%;
+}
+.modal .cardCompra__general {
+  background: purple;
+  width: 55%;
+}
+.modal .cardCompra__info {
+  background: peru;
+  width: 35%;
 }
 
 @keyframes fadeIn {
